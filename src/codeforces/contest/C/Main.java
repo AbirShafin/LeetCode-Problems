@@ -25,7 +25,7 @@ public class Main {
         StringBuilder sb = new StringBuilder();
         for(int i=0; i<v1.length(); i++){
             char ch = v1.charAt(i);
-            if("AEIOUaeiou".indexOf(ch)==-1){
+            if("AEIOUYaeiouy".indexOf(ch)==-1){
                 sb.append(".");
                 sb.append(Character.toLowerCase(ch));
             }
