@@ -20,26 +20,34 @@ public class Main {
     static String nextLine() throws IOException {
         return br.readLine();
     }
-
+    static int upperBound(int[] arr, int target) {
+        int l = 0, r = arr.length;
+        while (l < r) {
+            int mid = (l + r) / 2;
+            if (arr[mid] <= target)
+                l = mid + 1;
+            else
+                r = mid;
+        }
+        return l;
+    }
     public static void main(String[] args) throws IOException {
         int v1 = nextInt(), a=0;
         int[] arr1 = new int[v1];
         for(int i=v1; i>0; i--){
             arr1[a++] = nextInt();
         }
-        a=0;
+        Arrays.sort(arr1);
+        StringBuilder sb = new StringBuilder();
+        
         int v2 = nextInt();
-        int[] arr2 = new int[v2];
-        for(int i=v2; i>0; i--){
-            arr2[a++] = nextInt();
+        while(v2-->0){
+            int q = nextInt();
+            int idx = upperBound(arr1, q);
+            sb.append(idx).append("\n");
         }
-        int count = 0;
-        for(int i=0; i<v2; i++){
-            count = 0;
-            for(int j=0; j<v1; j++){
-                if(arr2[i]>=arr1[j]){count++;}
-            }
-            System.out.println(count);
-        }
+            System.out.println(sb);
+        
+        
         }            
 }
