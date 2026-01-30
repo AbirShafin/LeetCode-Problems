@@ -1,4 +1,4 @@
-package codeforces.contest.C;
+// package codeforces.contest.C;
 import java.io.*;
 import java.util.*;
 
@@ -21,11 +21,15 @@ public class Main {
     }
 
     public static void main(String[] args) throws IOException {
-        int v1 = nextInt();
-        
-
-
-
-
-        }            
-}
+        String v1 = next();
+        StringBuilder sb = new StringBuilder();
+        for(int i=0; i<v1.length(); i++){
+            char ch = v1.charAt(i);
+            if("AEIOUaeiou".indexOf(ch)==-1){
+                sb.append(".");
+                sb.append(Character.toLowerCase(ch));
+            }
+        }
+        System.out.println(sb.toString());
+        }
+    }
