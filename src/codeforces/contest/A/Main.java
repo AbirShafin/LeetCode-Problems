@@ -1,8 +1,8 @@
-package codeforces.contest.A;
+// package codeforces.contest.A;
 
 import java.io.*;
 import java.util.*;
-
+//327A
 public class Main {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static StringTokenizer st;
@@ -22,12 +22,23 @@ public class Main {
     }
 
     public static void main(String[] args) throws IOException {
-        int v1 = nextInt();
-
-
-
-
-        
+        int n = nextInt();
+        int ones = 0;
+        int cur = 0;
+        int max = Integer.MIN_VALUE;
+        for(int i=0 ; i<n ; i++){
+            int x = nextInt();
+            if(x==1){
+                ones++;
+                x=-1;
+            }
+            else{
+                x = 1;
+            }
+            cur = Math.max(x, cur+x);
+            max = Math.max(cur, max);
+        }
+        System.out.println(ones+max);
         }            
 }
         
