@@ -1,8 +1,8 @@
-// package codeforces.contest.D;
+package codeforcesProblems;
 import java.io.*;
 import java.util.*;
 
-public class Main {
+public class twins160a{
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static StringTokenizer st;
 
